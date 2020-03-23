@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-theme="light"]{
+    --bg-color: rgb(250, 241, 241);
+    --hd-color: #191b1f; 
+    --font-color: rgb(199, 194, 194);
+    --btn-delete: #d95454;
+    --btn-add: #87bcbf;
+}
+[data-theme="dark"]{
+    --bg-color: #191b1f;
+    --hd-color: rgb(250, 241, 241);
+    --font-color: rgb(199, 194, 194);
+    --btn-delete: #d95454;
+    --btn-add: #87bcbf;
+}
