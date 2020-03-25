@@ -1,11 +1,17 @@
 import React from 'react';
-import Header from './Components/Header';
+import Nav from './Components/Nav';
+import Catagory from './Components/Catagory/Catagory'
 
 const App: React.FC = () => {
   return (
-    <div className="container font-main px-4 m-auto py-4 bg-primary box-border border-b border-border" >
-      <Header />
-    </div>
+    <React.Fragment>
+      <header className="container font-main px-4 m-auto py-4 bg-primary box-border" >
+        <Nav />
+      </header>
+      <main className="">
+        <Catagory />
+      </main>
+    </React.Fragment>
   );
 }
 

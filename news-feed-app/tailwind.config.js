@@ -5,6 +5,7 @@ module.exports = {
       secondary: 'var(--bg-secondary-color)',
       heading: 'var(--hd-color)',
       font: 'var(--font-color)',
+      catagoryHd: 'var(--catagory-hd-color)',
       border: 'var(--border-color)',
       btnDel: 'var(--btn-delete-color)',
       btnAdd: 'var(--btn-add)',
