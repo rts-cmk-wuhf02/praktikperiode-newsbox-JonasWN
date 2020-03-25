@@ -9,6 +9,7 @@ module.exports = {
       border: 'var(--border-color)',
       btnDel: 'var(--btn-delete-color)',
       btnAdd: 'var(--btn-add)',
+      footer: '#ff8100',
     },
     fontFamily: {
       main: 'Arial'
