@@ -10,6 +10,7 @@ module.exports = {
       btnDel: 'var(--btn-delete-color)',
       btnAdd: 'var(--btn-add)',
       footer: '#ff8100',
+      input: 'var(--input-color)',
     },
     fontFamily: {
       main: 'Arial'

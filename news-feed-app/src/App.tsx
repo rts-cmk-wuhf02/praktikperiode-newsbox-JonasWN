@@ -4,9 +4,12 @@ import Catagory from './Components/Catagory/Catagory'
 import Footer from './Components/Footer/Footer';
 
 const App: React.FC = () => {
+
+  document.querySelector("body")?.classList.add("bg-primary")
+
   return (
     <React.Fragment>
-      <header className="container font-main px-4 m-auto py-4 bg-primary box-border mt-2" >
+      <header className="container font-main px-4 m-auto py-4 bg-primary box-border" >
         <Nav />
       </header>
       <main className="">

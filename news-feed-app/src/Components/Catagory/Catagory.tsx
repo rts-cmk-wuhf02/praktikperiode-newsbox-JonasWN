@@ -21,7 +21,7 @@ const Catagory: React.FC = () => {
                 <Summary />
                 <Article />
             </details>
-            <details className="border-border border-t">
+            <details className="border-border border-t mb-12">
                 <Summary />
                 <Article />
             </details>
