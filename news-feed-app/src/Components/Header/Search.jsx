@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { AiOutlineFileSearch } from 'react-icons/ai'
 import Lottie from 'lottie-react-web'
-import * as animationData from './Catagory/search2.json'
+import * as animationData from '../../Animations/search2.json'
 
 const Search = () => {
     const [toggle, setToggle] = useState(false)

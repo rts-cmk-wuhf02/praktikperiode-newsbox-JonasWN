@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CatagoryIcon from '../../Assets/images/surf.svg'
 import { IoIosArrowForward } from "react-icons/io";
 import Lottie from 'react-lottie';
-import * as animationData from './open.json'
+import * as animationData from '../../Animations/open.json'
 
 const Summary = () => {
 
