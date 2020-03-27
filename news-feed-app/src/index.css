@@ -8,6 +8,7 @@
   --btn-delete: #d95454;
   --btn-add: #87bcbf;
   --input-color: #466686;
+  --settings-bg: #dceaf5;
 }
 
 [data-theme="dark"]{
@@ -20,6 +21,7 @@
   --btn-delete: #d95454;
   --btn-add: #87bcbf;
   --input-color: #466686;
+  --settings-bg: #0e1319;
 }
 
 summary::-webkit-details-marker {
@@ -49,6 +51,10 @@ summary:focus {
 .footer-btn {
   width: 50px;
   height: 50px;
+}
+
+.settings-height {
+  height: calc(100vh - 53px);
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -776,6 +782,10 @@ video {
   background-color: var(--input-color);
 }
 
+.bg-settings{
+  background-color: var(--settings-bg);
+}
+
 .hover\:bg-primary:hover{
   background-color: var(--bg-color);
 }
@@ -816,6 +826,10 @@ video {
   background-color: var(--input-color);
 }
 
+.hover\:bg-settings:hover{
+  background-color: var(--settings-bg);
+}
+
 .focus\:bg-primary:focus{
   background-color: var(--bg-color);
 }
@@ -854,6 +868,10 @@ video {
 
 .focus\:bg-input:focus{
   background-color: var(--input-color);
+}
+
+.focus\:bg-settings:focus{
+  background-color: var(--settings-bg);
 }
 
 .bg-bottom{
@@ -976,6 +994,10 @@ video {
   border-color: var(--input-color);
 }
 
+.border-settings{
+  border-color: var(--settings-bg);
+}
+
 .hover\:border-primary:hover{
   border-color: var(--bg-color);
 }
@@ -1016,6 +1038,10 @@ video {
   border-color: var(--input-color);
 }
 
+.hover\:border-settings:hover{
+  border-color: var(--settings-bg);
+}
+
 .focus\:border-primary:focus{
   border-color: var(--bg-color);
 }
@@ -1054,6 +1080,10 @@ video {
 
 .focus\:border-input:focus{
   border-color: var(--input-color);
+}
+
+.focus\:border-settings:focus{
+  border-color: var(--settings-bg);
 }
 
 .rounded-none{
@@ -4544,6 +4574,22 @@ video {
   color: var(--input-color);
 }
 
+.placeholder-settings::-webkit-input-placeholder{
+  color: var(--settings-bg);
+}
+
+.placeholder-settings:-ms-input-placeholder{
+  color: var(--settings-bg);
+}
+
+.placeholder-settings::-ms-input-placeholder{
+  color: var(--settings-bg);
+}
+
+.placeholder-settings::placeholder{
+  color: var(--settings-bg);
+}
+
 .focus\:placeholder-primary:focus::-webkit-input-placeholder{
   color: var(--bg-color);
 }
@@ -4702,6 +4748,22 @@ video {
 
 .focus\:placeholder-input:focus::placeholder{
   color: var(--input-color);
+}
+
+.focus\:placeholder-settings:focus::-webkit-input-placeholder{
+  color: var(--settings-bg);
+}
+
+.focus\:placeholder-settings:focus:-ms-input-placeholder{
+  color: var(--settings-bg);
+}
+
+.focus\:placeholder-settings:focus::-ms-input-placeholder{
+  color: var(--settings-bg);
+}
+
+.focus\:placeholder-settings:focus::placeholder{
+  color: var(--settings-bg);
 }
 
 .pointer-events-none{
@@ -5019,6 +5081,10 @@ video {
   color: var(--input-color);
 }
 
+.text-settings{
+  color: var(--settings-bg);
+}
+
 .hover\:text-primary:hover{
   color: var(--bg-color);
 }
@@ -5059,6 +5125,10 @@ video {
   color: var(--input-color);
 }
 
+.hover\:text-settings:hover{
+  color: var(--settings-bg);
+}
+
 .focus\:text-primary:focus{
   color: var(--bg-color);
 }
@@ -5097,6 +5167,10 @@ video {
 
 .focus\:text-input:focus{
   color: var(--input-color);
+}
+
+.focus\:text-settings:focus{
+  color: var(--settings-bg);
 }
 
 .text-xs{
@@ -8338,6 +8412,10 @@ video {
     background-color: var(--input-color);
   }
 
+  .sm\:bg-settings{
+    background-color: var(--settings-bg);
+  }
+
   .sm\:hover\:bg-primary:hover{
     background-color: var(--bg-color);
   }
@@ -8378,6 +8456,10 @@ video {
     background-color: var(--input-color);
   }
 
+  .sm\:hover\:bg-settings:hover{
+    background-color: var(--settings-bg);
+  }
+
   .sm\:focus\:bg-primary:focus{
     background-color: var(--bg-color);
   }
@@ -8416,6 +8498,10 @@ video {
 
   .sm\:focus\:bg-input:focus{
     background-color: var(--input-color);
+  }
+
+  .sm\:focus\:bg-settings:focus{
+    background-color: var(--settings-bg);
   }
 
   .sm\:bg-bottom{
@@ -8538,6 +8624,10 @@ video {
     border-color: var(--input-color);
   }
 
+  .sm\:border-settings{
+    border-color: var(--settings-bg);
+  }
+
   .sm\:hover\:border-primary:hover{
     border-color: var(--bg-color);
   }
@@ -8578,6 +8668,10 @@ video {
     border-color: var(--input-color);
   }
 
+  .sm\:hover\:border-settings:hover{
+    border-color: var(--settings-bg);
+  }
+
   .sm\:focus\:border-primary:focus{
     border-color: var(--bg-color);
   }
@@ -8616,6 +8710,10 @@ video {
 
   .sm\:focus\:border-input:focus{
     border-color: var(--input-color);
+  }
+
+  .sm\:focus\:border-settings:focus{
+    border-color: var(--settings-bg);
   }
 
   .sm\:rounded-none{
@@ -12106,6 +12204,22 @@ video {
     color: var(--input-color);
   }
 
+  .sm\:placeholder-settings::-webkit-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .sm\:placeholder-settings:-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .sm\:placeholder-settings::-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .sm\:placeholder-settings::placeholder{
+    color: var(--settings-bg);
+  }
+
   .sm\:focus\:placeholder-primary:focus::-webkit-input-placeholder{
     color: var(--bg-color);
   }
@@ -12264,6 +12378,22 @@ video {
 
   .sm\:focus\:placeholder-input:focus::placeholder{
     color: var(--input-color);
+  }
+
+  .sm\:focus\:placeholder-settings:focus::-webkit-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .sm\:focus\:placeholder-settings:focus:-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .sm\:focus\:placeholder-settings:focus::-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .sm\:focus\:placeholder-settings:focus::placeholder{
+    color: var(--settings-bg);
   }
 
   .sm\:pointer-events-none{
@@ -12581,6 +12711,10 @@ video {
     color: var(--input-color);
   }
 
+  .sm\:text-settings{
+    color: var(--settings-bg);
+  }
+
   .sm\:hover\:text-primary:hover{
     color: var(--bg-color);
   }
@@ -12621,6 +12755,10 @@ video {
     color: var(--input-color);
   }
 
+  .sm\:hover\:text-settings:hover{
+    color: var(--settings-bg);
+  }
+
   .sm\:focus\:text-primary:focus{
     color: var(--bg-color);
   }
@@ -12659,6 +12797,10 @@ video {
 
   .sm\:focus\:text-input:focus{
     color: var(--input-color);
+  }
+
+  .sm\:focus\:text-settings:focus{
+    color: var(--settings-bg);
   }
 
   .sm\:text-xs{
@@ -15901,6 +16043,10 @@ video {
     background-color: var(--input-color);
   }
 
+  .md\:bg-settings{
+    background-color: var(--settings-bg);
+  }
+
   .md\:hover\:bg-primary:hover{
     background-color: var(--bg-color);
   }
@@ -15941,6 +16087,10 @@ video {
     background-color: var(--input-color);
   }
 
+  .md\:hover\:bg-settings:hover{
+    background-color: var(--settings-bg);
+  }
+
   .md\:focus\:bg-primary:focus{
     background-color: var(--bg-color);
   }
@@ -15979,6 +16129,10 @@ video {
 
   .md\:focus\:bg-input:focus{
     background-color: var(--input-color);
+  }
+
+  .md\:focus\:bg-settings:focus{
+    background-color: var(--settings-bg);
   }
 
   .md\:bg-bottom{
@@ -16101,6 +16255,10 @@ video {
     border-color: var(--input-color);
   }
 
+  .md\:border-settings{
+    border-color: var(--settings-bg);
+  }
+
   .md\:hover\:border-primary:hover{
     border-color: var(--bg-color);
   }
@@ -16141,6 +16299,10 @@ video {
     border-color: var(--input-color);
   }
 
+  .md\:hover\:border-settings:hover{
+    border-color: var(--settings-bg);
+  }
+
   .md\:focus\:border-primary:focus{
     border-color: var(--bg-color);
   }
@@ -16179,6 +16341,10 @@ video {
 
   .md\:focus\:border-input:focus{
     border-color: var(--input-color);
+  }
+
+  .md\:focus\:border-settings:focus{
+    border-color: var(--settings-bg);
   }
 
   .md\:rounded-none{
@@ -19669,6 +19835,22 @@ video {
     color: var(--input-color);
   }
 
+  .md\:placeholder-settings::-webkit-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .md\:placeholder-settings:-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .md\:placeholder-settings::-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .md\:placeholder-settings::placeholder{
+    color: var(--settings-bg);
+  }
+
   .md\:focus\:placeholder-primary:focus::-webkit-input-placeholder{
     color: var(--bg-color);
   }
@@ -19827,6 +20009,22 @@ video {
 
   .md\:focus\:placeholder-input:focus::placeholder{
     color: var(--input-color);
+  }
+
+  .md\:focus\:placeholder-settings:focus::-webkit-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .md\:focus\:placeholder-settings:focus:-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .md\:focus\:placeholder-settings:focus::-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .md\:focus\:placeholder-settings:focus::placeholder{
+    color: var(--settings-bg);
   }
 
   .md\:pointer-events-none{
@@ -20144,6 +20342,10 @@ video {
     color: var(--input-color);
   }
 
+  .md\:text-settings{
+    color: var(--settings-bg);
+  }
+
   .md\:hover\:text-primary:hover{
     color: var(--bg-color);
   }
@@ -20184,6 +20386,10 @@ video {
     color: var(--input-color);
   }
 
+  .md\:hover\:text-settings:hover{
+    color: var(--settings-bg);
+  }
+
   .md\:focus\:text-primary:focus{
     color: var(--bg-color);
   }
@@ -20222,6 +20428,10 @@ video {
 
   .md\:focus\:text-input:focus{
     color: var(--input-color);
+  }
+
+  .md\:focus\:text-settings:focus{
+    color: var(--settings-bg);
   }
 
   .md\:text-xs{
@@ -23464,6 +23674,10 @@ video {
     background-color: var(--input-color);
   }
 
+  .lg\:bg-settings{
+    background-color: var(--settings-bg);
+  }
+
   .lg\:hover\:bg-primary:hover{
     background-color: var(--bg-color);
   }
@@ -23504,6 +23718,10 @@ video {
     background-color: var(--input-color);
   }
 
+  .lg\:hover\:bg-settings:hover{
+    background-color: var(--settings-bg);
+  }
+
   .lg\:focus\:bg-primary:focus{
     background-color: var(--bg-color);
   }
@@ -23542,6 +23760,10 @@ video {
 
   .lg\:focus\:bg-input:focus{
     background-color: var(--input-color);
+  }
+
+  .lg\:focus\:bg-settings:focus{
+    background-color: var(--settings-bg);
   }
 
   .lg\:bg-bottom{
@@ -23664,6 +23886,10 @@ video {
     border-color: var(--input-color);
   }
 
+  .lg\:border-settings{
+    border-color: var(--settings-bg);
+  }
+
   .lg\:hover\:border-primary:hover{
     border-color: var(--bg-color);
   }
@@ -23704,6 +23930,10 @@ video {
     border-color: var(--input-color);
   }
 
+  .lg\:hover\:border-settings:hover{
+    border-color: var(--settings-bg);
+  }
+
   .lg\:focus\:border-primary:focus{
     border-color: var(--bg-color);
   }
@@ -23742,6 +23972,10 @@ video {
 
   .lg\:focus\:border-input:focus{
     border-color: var(--input-color);
+  }
+
+  .lg\:focus\:border-settings:focus{
+    border-color: var(--settings-bg);
   }
 
   .lg\:rounded-none{
@@ -27232,6 +27466,22 @@ video {
     color: var(--input-color);
   }
 
+  .lg\:placeholder-settings::-webkit-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .lg\:placeholder-settings:-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .lg\:placeholder-settings::-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .lg\:placeholder-settings::placeholder{
+    color: var(--settings-bg);
+  }
+
   .lg\:focus\:placeholder-primary:focus::-webkit-input-placeholder{
     color: var(--bg-color);
   }
@@ -27390,6 +27640,22 @@ video {
 
   .lg\:focus\:placeholder-input:focus::placeholder{
     color: var(--input-color);
+  }
+
+  .lg\:focus\:placeholder-settings:focus::-webkit-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .lg\:focus\:placeholder-settings:focus:-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .lg\:focus\:placeholder-settings:focus::-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .lg\:focus\:placeholder-settings:focus::placeholder{
+    color: var(--settings-bg);
   }
 
   .lg\:pointer-events-none{
@@ -27707,6 +27973,10 @@ video {
     color: var(--input-color);
   }
 
+  .lg\:text-settings{
+    color: var(--settings-bg);
+  }
+
   .lg\:hover\:text-primary:hover{
     color: var(--bg-color);
   }
@@ -27747,6 +28017,10 @@ video {
     color: var(--input-color);
   }
 
+  .lg\:hover\:text-settings:hover{
+    color: var(--settings-bg);
+  }
+
   .lg\:focus\:text-primary:focus{
     color: var(--bg-color);
   }
@@ -27785,6 +28059,10 @@ video {
 
   .lg\:focus\:text-input:focus{
     color: var(--input-color);
+  }
+
+  .lg\:focus\:text-settings:focus{
+    color: var(--settings-bg);
   }
 
   .lg\:text-xs{
@@ -31027,6 +31305,10 @@ video {
     background-color: var(--input-color);
   }
 
+  .xl\:bg-settings{
+    background-color: var(--settings-bg);
+  }
+
   .xl\:hover\:bg-primary:hover{
     background-color: var(--bg-color);
   }
@@ -31067,6 +31349,10 @@ video {
     background-color: var(--input-color);
   }
 
+  .xl\:hover\:bg-settings:hover{
+    background-color: var(--settings-bg);
+  }
+
   .xl\:focus\:bg-primary:focus{
     background-color: var(--bg-color);
   }
@@ -31105,6 +31391,10 @@ video {
 
   .xl\:focus\:bg-input:focus{
     background-color: var(--input-color);
+  }
+
+  .xl\:focus\:bg-settings:focus{
+    background-color: var(--settings-bg);
   }
 
   .xl\:bg-bottom{
@@ -31227,6 +31517,10 @@ video {
     border-color: var(--input-color);
   }
 
+  .xl\:border-settings{
+    border-color: var(--settings-bg);
+  }
+
   .xl\:hover\:border-primary:hover{
     border-color: var(--bg-color);
   }
@@ -31267,6 +31561,10 @@ video {
     border-color: var(--input-color);
   }
 
+  .xl\:hover\:border-settings:hover{
+    border-color: var(--settings-bg);
+  }
+
   .xl\:focus\:border-primary:focus{
     border-color: var(--bg-color);
   }
@@ -31305,6 +31603,10 @@ video {
 
   .xl\:focus\:border-input:focus{
     border-color: var(--input-color);
+  }
+
+  .xl\:focus\:border-settings:focus{
+    border-color: var(--settings-bg);
   }
 
   .xl\:rounded-none{
@@ -34795,6 +35097,22 @@ video {
     color: var(--input-color);
   }
 
+  .xl\:placeholder-settings::-webkit-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .xl\:placeholder-settings:-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .xl\:placeholder-settings::-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .xl\:placeholder-settings::placeholder{
+    color: var(--settings-bg);
+  }
+
   .xl\:focus\:placeholder-primary:focus::-webkit-input-placeholder{
     color: var(--bg-color);
   }
@@ -34953,6 +35271,22 @@ video {
 
   .xl\:focus\:placeholder-input:focus::placeholder{
     color: var(--input-color);
+  }
+
+  .xl\:focus\:placeholder-settings:focus::-webkit-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .xl\:focus\:placeholder-settings:focus:-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .xl\:focus\:placeholder-settings:focus::-ms-input-placeholder{
+    color: var(--settings-bg);
+  }
+
+  .xl\:focus\:placeholder-settings:focus::placeholder{
+    color: var(--settings-bg);
   }
 
   .xl\:pointer-events-none{
@@ -35270,6 +35604,10 @@ video {
     color: var(--input-color);
   }
 
+  .xl\:text-settings{
+    color: var(--settings-bg);
+  }
+
   .xl\:hover\:text-primary:hover{
     color: var(--bg-color);
   }
@@ -35310,6 +35648,10 @@ video {
     color: var(--input-color);
   }
 
+  .xl\:hover\:text-settings:hover{
+    color: var(--settings-bg);
+  }
+
   .xl\:focus\:text-primary:focus{
     color: var(--bg-color);
   }
@@ -35348,6 +35690,10 @@ video {
 
   .xl\:focus\:text-input:focus{
     color: var(--input-color);
+  }
+
+  .xl\:focus\:text-settings:focus{
+    color: var(--settings-bg);
   }
 
   .xl\:text-xs{

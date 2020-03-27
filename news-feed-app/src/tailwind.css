@@ -8,6 +8,7 @@
     --btn-delete: #d95454;
     --btn-add: #87bcbf;
     --input-color: #466686;
+    --settings-bg: #dceaf5;
 }
 [data-theme="dark"]{
     --bg-color: #0c0f15;
@@ -19,6 +20,7 @@
     --btn-delete: #d95454;
     --btn-add: #87bcbf;
     --input-color: #466686;
+    --settings-bg: #0e1319;
 }
 summary::-webkit-details-marker {
     display: none; }
@@ -41,6 +43,9 @@ summary:focus {
 .footer-btn {
     width: 50px;
     height: 50px;
+}
+.settings-height {
+    height: calc(100vh - 53px);
 }
 @tailwind base;
 @tailwind components;

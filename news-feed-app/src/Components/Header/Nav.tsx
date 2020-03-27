@@ -14,7 +14,7 @@ const Nav: React.FC = () => {
 
     return (
         <nav >
-            <section className='flex justify-between text-heading mb-8'>
+            <section className='flex justify-between items-center text-heading'>
                 {
                     title === ""
                         ? <Link to="/archive"><AiOutlineInbox className="" /></Link>
@@ -25,7 +25,9 @@ const Nav: React.FC = () => {
                 </h1>
                 <Link to="/settings"><AiOutlineMenuUnfold className="" /></Link>
             </section>
-            <Search />
+            {title !== 'settings' &&
+                <Search />
+            }
         </nav>
     )
 }

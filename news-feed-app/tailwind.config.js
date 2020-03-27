@@ -11,6 +11,7 @@ module.exports = {
       btnAdd: 'var(--btn-add)',
       footer: '#ff8100',
       input: 'var(--input-color)',
+      settings: 'var(--settings-bg)',
     },
     fontFamily: {
       main: 'Arial'
