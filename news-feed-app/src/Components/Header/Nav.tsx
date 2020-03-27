@@ -1,20 +1,29 @@
 import React from 'react'
-import { AiOutlineInbox, AiOutlineSetting, AiOutlineMenuUnfold } from "react-icons/ai";
+import { AiOutlineInbox, AiOutlineMenuUnfold } from "react-icons/ai";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Search from './Search';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    Link,
+    useLocation
 } from "react-router-dom";
 
 const Nav: React.FC = () => {
+    let match = useLocation()
+    let title = match.pathname.replace('/', "")
+
     return (
         <nav >
             <section className='flex justify-between text-heading mb-8'>
-                <Link to="/archive">    <AiOutlineInbox className="" /></Link>
-                <Link to="/">  <h1 className='text-sm font-semibold'>NewsBox</h1></Link>
-                <Link to="/settings">    <AiOutlineMenuUnfold className="" /></Link>
+                {
+                    title === ""
+                        ? <Link to="/archive"><AiOutlineInbox className="" /></Link>
+                        : <Link to="/"><MdKeyboardArrowLeft className="" /></Link>
+                }
+                <h1 className='text-sm font-semibold'>
+                    {title === "" ? 'Newsletter' : title}
+                </h1>
+                <Link to="/settings"><AiOutlineMenuUnfold className="" /></Link>
             </section>
             <Search />
         </nav>

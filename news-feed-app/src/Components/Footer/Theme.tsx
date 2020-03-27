@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { WiMoonrise } from 'react-icons/wi'
 
-const Theme = () => {
+
+const Theme: React.FC = () => {
 
     let localTheme: any = localStorage.getItem("theme")
     const [theme, setTheme] = useState(localTheme)
 
-
     const el = document.documentElement
-    el.setAttribute('data-theme', theme)
+
+    if (localTheme) {
+        el.setAttribute('data-theme', theme)
+    }
 
     const handleTheme = () => {
         localStorage.setItem("theme", localTheme === 'light' ? 'dark' : 'light')

@@ -1,8 +1,11 @@
 import React from 'react'
+import Catagory from '../../Components/Catagory/Catagory'
 
 const Archive: React.FC = () => {
     return (
-        <h1>archive</h1>
+        <main className="">
+            <Catagory />
+        </main>
     )
 }
 
