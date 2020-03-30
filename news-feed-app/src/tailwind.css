@@ -34,6 +34,12 @@ summary:focus {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+.hd-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 .filter-img {
     filter: contrast(1.2) saturate(1.2) brightness(1);
 }

@@ -1,30 +1,34 @@
 import React from 'react'
 import Cover from '../../Assets/images/article.png'
 import { AiOutlineInbox } from 'react-icons/ai'
+import useAsyncHook from './useAsyncHook'
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
     title: string
 }
 
 const Article: React.FC<Props> = ({ title }) => {
+    const [search, setSearch] = React.useState("");
+    const [query, setQuery] = React.useState(`https://rss.nytimes.com/services/xml/rss/nyt/${title}.xml`);
+    const [result, loading]: any = useAsyncHook(query);
+
     return (
         <React.Fragment>
-            <section className='flex h-24 py-4 border-border border-t px-4'>
-                <img src={Cover} alt="Article Cover" className="mr-4 filter-img" />
-                <article className='h-full leading-5'>
-                    <h3 className="text-catagoryHd font-bold text-sm">Headline</h3>
-                    <p className="line-clamp text-font font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolor veniam, magnam commodi quia vero nobis corporis ipsam repudiandae dicta!</p>
-                </article>
-            </section>
-            <section className='flex h-24 py-4 border-border border-t px-4'>
-                <article className='h-full leading-5'>
-                    <h3 className="text-catagoryHd font-bold text-sm">Headline</h3>
-                    <p className="line-clamp text-font font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolor veniam, magnam commodi quia vero nobis corporis ipsam repudiandae dicta!</p>
-                </article>
-                <div className="ml-10 w-checked bg-btnAdd flex justify-center items-center -m-4">
-                    <AiOutlineInbox className="text-secondary text-2xl " />
-                </div>
-            </section>
+            {result.map((article: any) => {
+                return (
+                    <section className='flex h-24 py-4 border-border border-t px-4' key={uuidv4()}>
+                        <img src={
+                            article["media:content"] !== undefined ? article["media:content"]["@attributes"].url : Cover
+
+                        } alt="Article Cover" className="mr-4 filter-img object-contain w-16 rounded-full" />
+                        <article className='h-full leading-5'>
+                            <h3 className="text-catagoryHd font-bold text-sm hd-clamp">{article.title["#text"]}</h3>
+                            <p className="line-clamp text-font font-light text-sm">{article.description["#text"]}</p>
+                        </article>
+                    </section>
+                )
+            })}
         </React.Fragment>
     )
 }

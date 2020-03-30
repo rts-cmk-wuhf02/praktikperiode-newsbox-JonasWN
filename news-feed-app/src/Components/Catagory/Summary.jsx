@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import Lottie from 'react-lottie';
 import * as animationData from '../../Animations/open.json'
 
-const Summary = () => {
+const Summary = ({ title }) => {
 
     const defaultOptions = {
         loop: false,
@@ -21,7 +21,7 @@ const Summary = () => {
                 <picture className='shadow-lg rounded-full h-8 w-8 p-1 flex justify-center items-center mr-2'>
                     <img src={CatagoryIcon} alt="Catagory Icon" className='w-4/5' />
                 </picture>
-                <h2 className='text-catagoryHd font-bold uppercase text-sm'>Catagory</h2>
+                <h2 className='text-catagoryHd font-bold uppercase text-sm'>{title}</h2>
             </div>
             {/* <IoIosArrowForward className="ml-auto" /> */}
             <div className="ml-auto h-12 flex items-center rotate-90">

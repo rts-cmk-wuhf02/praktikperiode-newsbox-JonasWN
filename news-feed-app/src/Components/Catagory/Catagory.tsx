@@ -14,22 +14,18 @@ interface Props {
 
 const Catagory: React.FC<Props> = ({ articles }) => {
     const [checked, setChecked]: any = useState([])
-    const [search, setSearch] = React.useState("");
-    const [query, setQuery] = React.useState("https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml");
-    const [result, loading] = useAsyncHook(query);
 
     useEffect(() => {
         let checkList = articles.filter(article => article.checked === true)
         setChecked([...checkList])
     }, [articles])
 
-    console.log(checked)
     return (
         <React.Fragment>
             {checked.map((item: any) => {
                 return (
                     <details className="border-border border-t" key={item.id}>
-                        <Summary />
+                        <Summary title={item.title} />
                         <Article title={item.title} />
                     </details>
                 )
