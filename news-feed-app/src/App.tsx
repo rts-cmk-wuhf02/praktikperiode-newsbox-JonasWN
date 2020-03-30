@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from './Components/Footer/Footer';
 import Home from './Pages/Home/Home';
 import Header from './Components/Header/Header';
@@ -14,6 +14,7 @@ import {
 const App: React.FC = () => {
 
   document.querySelector("body")?.classList.add("bg-primary")
+  const [list, setList] = useState(['Europe', 'Health', 'Sports', 'Business', 'Travel'])
 
   return (
     <Router>
@@ -23,7 +24,7 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/archive" component={Archive} />
           <Route path="/" exact component={Home} />
-          <Route path="/settings" component={Settings} />
+          <Route path='/settings' exact render={(props) => <Settings {...props} list={list} />} />
         </Switch>
 
         <Footer />
