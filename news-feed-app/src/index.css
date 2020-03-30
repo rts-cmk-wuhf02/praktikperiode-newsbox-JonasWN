@@ -24,6 +24,10 @@
   --settings-bg: #0e1319;
 }
 
+* {
+  transition: background .2s ease-in-out, color .4s ease-in-out, border .4s ease-in-out;
+}
+
 summary::-webkit-details-marker {
   display: none;
 }

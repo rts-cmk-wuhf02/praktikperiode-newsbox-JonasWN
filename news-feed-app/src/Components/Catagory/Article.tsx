@@ -1,6 +1,5 @@
 import React from 'react'
 import Cover from '../../Assets/images/article.png'
-import { AiOutlineInbox } from 'react-icons/ai'
 import useAsyncHook from './useAsyncHook'
 import { v4 as uuidv4 } from "uuid";
 
