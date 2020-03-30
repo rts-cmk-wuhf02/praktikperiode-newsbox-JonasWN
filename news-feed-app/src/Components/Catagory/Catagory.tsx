@@ -5,59 +5,35 @@ import Xml from './xml'
 import Json from './json'
 import useAsyncHook from './useAsyncHook'
 
-const Catagory: React.FC = () => {
-    // const [loading, setLoading] = useState(false)
-    // const [result, setResult] = useState([])
+interface Props {
+    articles: {
+        title: string;
+        checked: boolean;
+    }[]
+}
 
-    // const url = 'https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml'
-
-    // useEffect(() => {
-    //     fetchData()
-    // }, [result])
-
-    // const fetchData = async () => {
-    //     try {
-    //         setLoading(true)
-    //         let xmltext = await Xml(url)
-    //         const data: any = await Json(xmltext)
-    //         console.log(data.rss.channel.item)
-    //     }
-    //     catch (err) {
-    //         console.log(err)
-    //     }
-    //     finally {
-    //         setLoading(false)
-    //     }
-    // }
-
+const Catagory: React.FC<Props> = ({ articles }) => {
+    const [checked, setChecked]: any = useState([])
     const [search, setSearch] = React.useState("");
     const [query, setQuery] = React.useState("https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml");
     const [result, loading] = useAsyncHook(query);
 
-    // console.log(result)
-    // console.log(loading)
+    useEffect(() => {
+        let checkList = articles.filter(article => article.checked === true)
+        setChecked([...checkList])
+    }, [articles])
+
+    console.log(checked)
     return (
         <React.Fragment>
-            <details className="border-border border-t">
-                <Summary />
-                <Article />
-            </details>
-            <details className="border-border border-t">
-                <Summary />
-                <Article />
-            </details>
-            <details className="border-border border-t">
-                <Summary />
-                <Article />
-            </details>
-            <details className="border-border border-t">
-                <Summary />
-                <Article />
-            </details>
-            <details className="border-border border-t mb-12">
-                <Summary />
-                <Article />
-            </details>
+            {checked.map((item: any) => {
+                return (
+                    <details className="border-border border-t" key={item.id}>
+                        <Summary />
+                        <Article title={item.title} />
+                    </details>
+                )
+            })}
         </React.Fragment>
     )
 }

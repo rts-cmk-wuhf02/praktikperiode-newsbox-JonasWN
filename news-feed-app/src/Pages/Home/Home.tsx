@@ -1,10 +1,17 @@
 import React from 'react'
 import Catagory from '../../Components/Catagory/Catagory'
 
-const Home = () => {
+interface Props {
+    articles: {
+        title: string;
+        checked: boolean;
+    }[]
+}
+
+const Home: React.FC<Props> = ({ articles }) => {
     return (
         <main className="">
-            <Catagory />
+            <Catagory articles={articles} />
         </main>
     )
 }

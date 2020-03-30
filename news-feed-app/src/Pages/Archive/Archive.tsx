@@ -4,7 +4,7 @@ import Catagory from '../../Components/Catagory/Catagory'
 const Archive: React.FC = () => {
     return (
         <main className="">
-            <Catagory />
+            {/* <Catagory /> */}
         </main>
     )
 }

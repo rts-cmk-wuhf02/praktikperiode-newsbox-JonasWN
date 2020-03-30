@@ -2,7 +2,11 @@ import React from 'react'
 import Cover from '../../Assets/images/article.png'
 import { AiOutlineInbox } from 'react-icons/ai'
 
-const Article: React.FC = () => {
+interface Props {
+    title: string
+}
+
+const Article: React.FC<Props> = ({ title }) => {
     return (
         <React.Fragment>
             <section className='flex h-24 py-4 border-border border-t px-4'>

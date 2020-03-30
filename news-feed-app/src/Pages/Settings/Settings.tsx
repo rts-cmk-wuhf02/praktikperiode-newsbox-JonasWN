@@ -2,11 +2,19 @@ import React from 'react'
 import Checked from './Checked'
 import Toggle from './Toggle'
 interface Props {
-    list: any
+    list: {
+        title: string;
+        checked: boolean;
+        id: string;
+    }[]
+    checked: (catagory: string, state: boolean) => void,
+    setState: {
+        title: string;
+        checked: boolean;
+    }[]
 }
 
-const Settings: React.FC<Props> = ({ list }) => {
-    console.log(list)
+const Settings: React.FC<Props> = ({ list, checked, setState }) => {
     return (
         <React.Fragment>
             <main className="bg-settings settings-height px-4">
@@ -15,7 +23,7 @@ const Settings: React.FC<Props> = ({ list }) => {
                     <h3 className="text-sm font-normal text-catagoryHd">Catagories</h3>
                 </div>
                 <ul className="bg-primary rounded-lg shadow-lg">
-                    <Checked list={list} />
+                    <Checked list={list} checked={checked} setState={setState} />
                 </ul>
                 <Toggle />
             </main>
