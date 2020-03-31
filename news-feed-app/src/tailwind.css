@@ -56,6 +56,11 @@ summary:focus {
 .settings-height {
     height: calc(100vh - 53px);
 }
+.min-text {
+    min-width: 80px;
+    width: fit-content;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

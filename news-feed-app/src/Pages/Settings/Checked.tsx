@@ -8,13 +8,9 @@ interface Props {
         id: string;
     }[]
     checked: (catagory: string, state: boolean) => void,
-    setState: {
-        title: string;
-        checked: boolean;
-    }[]
 }
 
-const Checked: React.FC<Props> = ({ list, checked, setState }) => {
+const Checked: React.FC<Props> = ({ list, checked }) => {
 
     return (
         <React.Fragment>

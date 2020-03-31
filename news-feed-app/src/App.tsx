@@ -8,17 +8,12 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 
 const App: React.FC = () => {
 
-  document.querySelector("body")?.classList.add("bg-primary")
-
-  const defaultList = ['Europe', 'Health', 'Sports', 'Business', 'Travel']
-  const [list, setList] = useState(defaultList)
   let [checkedList, setCheckedList] = useState([
     {
       title: 'Europe',
@@ -67,7 +62,7 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/archive" component={Archive} />
           <Route path='/' exact render={(props) => <Home {...props} articles={checkedList} />} />
-          <Route path='/settings' exact render={(props) => <Settings {...props} list={checkedList} checked={check} setState={checkedList} />} />
+          <Route path='/settings' exact render={(props) => <Settings {...props} list={checkedList} checked={check} />} />
         </Switch>
 
         <Footer />

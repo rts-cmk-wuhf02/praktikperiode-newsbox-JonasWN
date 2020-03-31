@@ -2,7 +2,15 @@ import React, { useState, useEffect } from 'react'
 import Xml from './xml'
 import Json from './json'
 
-function useAsyncHook(url: any) {
+/**
+ * Returns Xml data to Json Format
+ * @typedef {object} result 
+ * @param {string} url Fetched url
+ * @return {result} 
+ * @return {boolean} loading 
+ */
+
+function useAsyncHook(url: string) {
     const [loading, setLoading] = useState(false)
     const [result, setResult] = useState([])
 
@@ -19,7 +27,6 @@ function useAsyncHook(url: any) {
             }
             finally {
                 setLoading(false)
-
             }
         }
         fetchData()

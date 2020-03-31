@@ -13,7 +13,6 @@ const Title: React.FC<Props> = ({ title, checkState, artChecked }) => {
         checkState(title, !checked)
     }
 
-
     return (
         <React.Fragment>
             <h3 className="text-catagoryHd font-bold uppercase text-sm">{title + " " + checked}</h3>

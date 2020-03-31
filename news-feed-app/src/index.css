@@ -68,6 +68,13 @@ summary:focus {
   height: calc(100vh - 53px);
 }
 
+.min-text {
+  min-width: 80px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
