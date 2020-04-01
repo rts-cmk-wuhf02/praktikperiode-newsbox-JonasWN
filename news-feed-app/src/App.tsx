@@ -14,7 +14,8 @@ import { v4 as uuidv4 } from "uuid";
 
 const App: React.FC = () => {
 
-  let [checkedList, setCheckedList] = useState([
+  const [savedList, setSaved]: any = useState([])
+  const [checkedList, setCheckedList] = useState([
     {
       title: 'Europe',
       checked: true,
@@ -53,15 +54,26 @@ const App: React.FC = () => {
     newArray[pos] = updated
     setCheckedList([...newArray])
   }
-
+  const saveArticle = (title: string, description: string, cover: string, link: string, catagory: string) => {
+    let savedArticle = {
+      title: title,
+      description: description,
+      cover: cover,
+      link: link,
+      catagory: catagory,
+      id: uuidv4()
+    }
+    setSaved([...savedList, savedArticle])
+    console.log(savedList)
+  }
   return (
     <Router>
       <React.Fragment>
         <Header />
 
         <Switch>
-          <Route path="/archive" component={Archive} />
-          <Route path='/' exact render={(props) => <Home {...props} articles={checkedList} />} />
+          <Route path="/archive" exact render={(props) => <Archive {...props} savedList={savedList} articles={checkedList} />} />
+          <Route path='/' exact render={(props) => <Home {...props} articles={checkedList} saveArticle={saveArticle} />} />
           <Route path='/settings' exact render={(props) => <Settings {...props} list={checkedList} checked={check} />} />
         </Switch>
 
