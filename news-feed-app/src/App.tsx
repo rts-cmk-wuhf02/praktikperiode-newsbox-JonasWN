@@ -43,6 +43,7 @@ const App: React.FC = () => {
     },
   ])
 
+  // check if catagory is checked and should be listed
   const check = (catagory: string, state: boolean) => {
     let updated = {
       title: catagory,
@@ -54,19 +55,26 @@ const App: React.FC = () => {
     newArray[pos] = updated
     setCheckedList([...newArray])
   }
+
+  // save article to archieve
   const saveArticle = (title: string, description: string, cover: string, link: string, catagory: string) => {
-    let savedArticle = {
-      title: title,
-      description: description,
-      cover: cover,
-      link: link,
-      catagory: catagory,
-      id: uuidv4()
+    const index = savedList.findIndex((article: any) => article.title === title)
+
+    // if article is not saved => save it
+    if (index === -1) {
+      let savedArticle = {
+        title: title,
+        description: description,
+        cover: cover,
+        link: link,
+        catagory: catagory,
+        id: uuidv4()
+      }
+      setSaved([...savedList, savedArticle])
     }
-    setSaved([...savedList, savedArticle])
-    console.log(savedList)
   }
 
+  // delete article from archieves
   const delArticle = (id: string) => {
     setSaved([...savedList.filter((article: any) => article.id !== id)])
   }
