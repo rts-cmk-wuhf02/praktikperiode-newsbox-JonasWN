@@ -57,7 +57,7 @@ summary:focus {
     height: calc(100vh - 53px);
 }
 .min-text {
-    min-width: 80px;
+    min-width: 20px;
     width: fit-content;
 }
 .tgl {
