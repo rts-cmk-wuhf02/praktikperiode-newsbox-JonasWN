@@ -9,9 +9,10 @@ interface Props {
         title: string;
         checked: boolean;
     }[],
+    delArticle: (id: string) => void
 }
 
-const SavedCatagory: React.FC<Props> = ({ savedList, articles }) => {
+const SavedCatagory: React.FC<Props> = ({ savedList, articles, delArticle }) => {
     const [checked, setChecked]: any = useState([])
 
     useEffect(() => {
@@ -25,7 +26,7 @@ const SavedCatagory: React.FC<Props> = ({ savedList, articles }) => {
                 return (
                     <details className="border-border border-t" key={item.id}>
                         <Summary title={item.title} />
-                        <SavedArticle catagory={item.title} savedList={savedList} />
+                        <SavedArticle catagory={item.title} savedList={savedList} delArticle={delArticle} />
                     </details>
                 )
             })}

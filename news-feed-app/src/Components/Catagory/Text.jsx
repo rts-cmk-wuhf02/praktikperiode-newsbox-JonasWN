@@ -4,40 +4,32 @@ import { AiOutlineInbox } from 'react-icons/ai'
 import Lottie from 'react-lottie';
 import * as animationData from '../../Animations/complete.json'
 
+const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData.default,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+    },
+};
 
 const Text = ({ link, img, header, description, saveArticle, catagory }) => {
-    const defaultOptions = {
-        loop: false,
-        autoplay: true,
-        animationData: animationData.default,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        },
-    };
-
     const [saved, setSaved] = useState(false)
     const x = useSpring(0, { stiffness: 600, damping: 200, })
     const width = useTransform(x, [-120, 0], [800, 0])
-    const controls = useAnimation()
     const [swiped, setSwiped] = useState(false)
-
-
 
     async function handleDragEnd() {
         if (swiped)
             await saveArticle(header, description, img, link, catagory)
     }
+
     async function handleDrag(event, info) {
         const offset = info.offset.x
-        const velocity = info.velocity.x
 
         if (offset < -200) {
             setSaved(true)
             setSwiped(true)
-            await controls.start({
-                x: 100,
-                transition: { duration: 0.5 },
-            })
         }
         else {
             setSaved(false)

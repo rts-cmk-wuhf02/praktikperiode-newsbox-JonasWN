@@ -66,13 +66,18 @@ const App: React.FC = () => {
     setSaved([...savedList, savedArticle])
     console.log(savedList)
   }
+
+  const delArticle = (id: string) => {
+    setSaved([...savedList.filter((article: any) => article.id !== id)])
+  }
+
   return (
     <Router>
       <React.Fragment>
         <Header />
 
         <Switch>
-          <Route path="/archive" exact render={(props) => <Archive {...props} savedList={savedList} articles={checkedList} />} />
+          <Route path="/archive" exact render={(props) => <Archive {...props} savedList={savedList} articles={checkedList} delArticle={delArticle} />} />
           <Route path='/' exact render={(props) => <Home {...props} articles={checkedList} saveArticle={saveArticle} />} />
           <Route path='/settings' exact render={(props) => <Settings {...props} list={checkedList} checked={check} />} />
         </Switch>

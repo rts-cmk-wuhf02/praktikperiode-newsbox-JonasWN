@@ -8,13 +8,14 @@ interface Props {
         title: string;
         checked: boolean;
         id: string;
-    }[]
+    }[],
+    delArticle: (id: string) => void
 }
 
-const Archive: React.FC<Props> = ({ savedList, articles }) => {
+const Archive: React.FC<Props> = ({ savedList, articles, delArticle }) => {
     return (
         <main className="">
-            <SavedCatagory savedList={savedList} articles={articles} />
+            <SavedCatagory savedList={savedList} articles={articles} delArticle={delArticle} />
         </main>
     )
 }
