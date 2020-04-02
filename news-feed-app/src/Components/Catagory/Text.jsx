@@ -19,9 +19,10 @@ const Text = ({ link, img, header, description, saveArticle, catagory }) => {
     const width = useTransform(x, [-120, 0], [800, 0])
     const [swiped, setSwiped] = useState(false)
 
-    async function handleDragEnd() {
-        if (swiped)
-            await saveArticle(header, description, img, link, catagory)
+    function handleDragEnd() {
+        if (saved) {
+            window.requestIdleCallback(() => saveArticle(header, description, img, link, catagory))
+        }
     }
 
     async function handleDrag(event, info) {
@@ -34,10 +35,12 @@ const Text = ({ link, img, header, description, saveArticle, catagory }) => {
         else {
             setSaved(false)
         }
+
     }
 
     return (
         <motion.div onDrag={handleDrag} onDragTransitionEnd={handleDragEnd} style={{ x }} drag={"x"} dragConstraints={{ left: 0, right: 0 }} className="flex">
+            {/* {swiped ? <div className="relative z-0 w-2 bg-btnAdd -m-4"></div> : null} */}
             <img src={img} alt="Article Cover" className="mr-4 filter-img object-contain w-16 rounded-full shadow-lg" />
             <article className='h-full leading-5 min-text mr-6'>
                 <a href={link}> <h3 className="text-catagoryHd font-bold text-sm hd-clamp">{header}</h3></a>
