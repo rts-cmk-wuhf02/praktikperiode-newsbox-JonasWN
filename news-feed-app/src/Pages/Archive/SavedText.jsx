@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { motion, useTransform, useSpring, useAnimation } from 'framer-motion'
 import { MdDeleteSweep } from 'react-icons/md'
 import Lottie from 'react-lottie';
-import * as animationData from '../../Animations/delete.json'
+import * as animationData from '../../Animations/del.json'
 
 
 const Text = ({ link, img, header, description }) => {
@@ -53,8 +53,8 @@ const Text = ({ link, img, header, description }) => {
             </article>
             <motion.div style={{ width }} className=" w-0 bg-btnDel flex justify-center items-center -m-4">
                 {
-                    saved ? <Lottie options={defaultOptions} height={90} width={155} />
-                        : <MdDeleteSweep className="text-secondary text-2xl" />
+                    saved ? <Lottie options={defaultOptions} height={60} width={60} />
+                        : <MdDeleteSweep className="text-secondary text-3xl" />
                 }
             </motion.div>
 
