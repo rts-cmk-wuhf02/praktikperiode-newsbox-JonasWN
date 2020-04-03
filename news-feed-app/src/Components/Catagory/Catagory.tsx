@@ -22,7 +22,7 @@ const Catagory: React.FC<Props> = ({ articles, saveArticle }) => {
         <React.Fragment>
             {checked.map((item: any) => {
                 return (
-                    <details className="border-border border-t" key={item.id}>
+                    <details className="border-border" key={item.id}>
                         <Summary title={item.title} />
                         <Article title={item.title} saveArticle={saveArticle} />
                     </details>
