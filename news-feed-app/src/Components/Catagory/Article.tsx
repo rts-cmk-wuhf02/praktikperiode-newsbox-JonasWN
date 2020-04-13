@@ -9,9 +9,11 @@ import * as animationData from '../../Animations/loading (2).json'
 interface Props {
     title: string,
     saveArticle: (title: string, description: string, cover: string, link: string, catagory: string) => void,
+    refresh: boolean,
+    setFreshed: () => void
 }
 
-const Article: React.FC<Props> = ({ title, saveArticle }) => {
+const Article: React.FC<Props> = ({ title, saveArticle, refresh, setFreshed }) => {
     const [search, setSearch] = useState("");
     const [query, setQuery] = useState(`https://rss.nytimes.com/services/xml/rss/nyt/${title}.xml`);
     const [result, loading]: any = useAsyncHook(query);
@@ -26,9 +28,9 @@ const Article: React.FC<Props> = ({ title, saveArticle }) => {
         },
     };
 
-    setTimeout(() => {
-        setQuery(`https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml`)
-    }, 6000);
+    useEffect(() => {
+        setQuery(`https://rss.nytimes.com/services/xml/rss/nyt/${title}.xml`)
+    }, [refresh])
 
     return (
         <React.Fragment>
