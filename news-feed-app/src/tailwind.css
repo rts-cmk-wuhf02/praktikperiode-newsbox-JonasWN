@@ -119,7 +119,7 @@ summary:focus {
     transition: all 0.2s ease;
   }
   .tgl-light:checked + .tgl-btn {
-    background: #9fd6ae;
+    background: #87bcbf;
   }
   
 @tailwind base;

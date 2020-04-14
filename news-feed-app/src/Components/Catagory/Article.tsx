@@ -29,7 +29,10 @@ const Article: React.FC<Props> = ({ title, saveArticle, refresh, setFreshed }) =
     };
 
     useEffect(() => {
-        setQuery(`https://rss.nytimes.com/services/xml/rss/nyt/${title}.xml`)
+        if (refresh === true) {
+            setQuery(`https://rss.nytimes.com/services/xml/rss/nyt/${title}.xml`)
+            setFreshed()
+        }
     }, [refresh])
 
     return (
