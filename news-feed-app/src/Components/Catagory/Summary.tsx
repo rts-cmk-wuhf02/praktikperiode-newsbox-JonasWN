@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import CatagoryIcon from '../../Assets/images/surf.svg'
-import { IoIosArrowForward } from "react-icons/io";
 import Lottie from 'react-lottie';
 import * as animationData from '../../Animations/open.json'
 
-const Summary = ({ title }) => {
+interface Props {
+    title: string
+}
+
+const Summary: React.FC<Props> = ({ title }) => {
     const [loaded, setLoaded] = useState(false)
 
     setTimeout(() => {
@@ -14,6 +17,7 @@ const Summary = ({ title }) => {
     const defaultOptions = {
         loop: false,
         autoplay: true,
+        //@ts-ignore
         animationData: animationData.default,
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
