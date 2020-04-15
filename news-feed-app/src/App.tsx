@@ -10,8 +10,8 @@ import {
   Route,
 } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { AnimatePresence } from 'framer-motion';
-
+import { SettingsProvider } from './Context/SettingsContext'
+import { SaveArticleProvider } from './Context/SaveArticleContext'
 
 const App: React.FC = () => {
 
@@ -95,18 +95,20 @@ const App: React.FC = () => {
       <>
         <Header />
 
-
         <Switch>
-          <Route path="/archive" exact render={(props) => <Archive {...props} savedList={savedList} articles={checkedList} delArticle={delArticle} />} />
-          <Route path='/' exact render={(props) => <Home {...props} articles={checkedList} saveArticle={saveArticle} />} />
-          <Route path='/settings' exact render={(props) => <Settings {...props} list={checkedList} checked={check} swapOrder={swapOrder} />} />
+          <SettingsProvider>
+            <SaveArticleProvider>
+              <Route path="/archive" exact render={(props) => <Archive {...props} savedList={savedList} articles={checkedList} delArticle={delArticle} />} />
+              <Route path='/' exact render={(props) => <Home {...props} articles={checkedList} saveArticle={saveArticle} />} />
+              <Route path='/settings' exact render={(props) => <Settings {...props} list={checkedList} checked={check} swapOrder={swapOrder} />} />
+            </SaveArticleProvider>
+          </SettingsProvider>
         </Switch>
-
 
         <Footer />
 
       </>
-    </Router>
+    </Router >
   );
 }
 

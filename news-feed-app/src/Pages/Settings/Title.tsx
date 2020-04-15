@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import { v4 as uuidv4 } from "uuid";
+import { SettingsContext } from '../../Context/SettingsContext'
 
 interface Props {
     // title: string,
@@ -14,18 +15,14 @@ interface Props {
 }
 
 const Title: React.FC<Props> = ({ list, checkState, index }) => {
-    const [checked, setChecked] = useState(list[index].checked)
+    const [settings, setSettings, check] = useContext(SettingsContext)
 
     const id = uuidv4()
-
-    const check = (e: any) => {
-        checkState(list[index].title, !checked)
-    }
 
     return (
         <React.Fragment>
             <h3 className="text-catagoryHd font-bold uppercase text-sm">{list[index].title}</h3>
-            <input className="tgl tgl-light" type="checkbox" id={id} onClick={check} checked={checked} onChange={e => { }} />
+            <input className="tgl tgl-light" type="checkbox" id={id} onClick={() => check(settings[index].title, !settings[index].checked)} checked={settings[index].checked} onChange={e => { }} />
             <label className="tgl-btn" htmlFor={id} ></label>
         </React.Fragment>
     )

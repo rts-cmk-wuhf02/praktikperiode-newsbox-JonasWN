@@ -1,16 +1,18 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useContext } from 'react'
 import Title from './Title'
 import clamp from "lodash-es/clamp";
 import swap from "lodash-move";
 import { useGesture } from "react-with-gesture";
 import { useSprings, animated, interpolate } from "react-spring";
+import { SettingsContext } from '../../Context/SettingsContext'
+
 
 //@ts-ignore
 const fn = (order, down, originalIndex, curIndex, y) => index =>
     down && index === originalIndex
         ? {
             y: curIndex * 48 + y,
-            scale: 1.04,
+            scale: 1,
             zIndex: "1",
             shadow: 20,
             //@ts-ignore
@@ -34,16 +36,12 @@ interface Props {
     swapOrder: (order: any) => void
 }
 
-const Checked: React.FC<Props> = ({ list, checked, swapOrder }) => {
+const Checked: React.FC<Props> = ({ list, checked }) => {
     const length = [0, 1, 2, 3, 4]
-    let order = useRef(length.map((_, index) => index));
+    // const [settings, setSettings, check, swapOrder] = useContext(SettingsContext)
+    let order = useRef(length.map((_: any, index: any) => index));
     //@ts-ignore
     const [springs, setSprings] = useSprings(length.length, fn(order.current));
-
-    useEffect(() => {
-
-        //@ts-ignore
-    }, [length, setSprings]);
 
     const bind = useGesture(({ args: [originalIndex], down, delta: [, y] }) => {
         const curIndex = order.current.indexOf(originalIndex);
@@ -75,7 +73,7 @@ const Checked: React.FC<Props> = ({ list, checked, swapOrder }) => {
         <animated.li
             {...bind(i)}
             className="flex justify-between items-center border-border border-b h-12 px-4 absolute w-full"
-            key={list[i].id}
+            key={length[i]}
             style={{
                 zIndex,
                 transform: interpolate(
@@ -85,7 +83,7 @@ const Checked: React.FC<Props> = ({ list, checked, swapOrder }) => {
                 marginBottom: list.length - 1 ? "15vh" : "0"
             }}
         >
-            <Title list={list} checkState={checked} index={order.current[i]} />
+            <Title list={list} checkState={checked} index={length[i]} />
         </animated.li>
     ));
 }

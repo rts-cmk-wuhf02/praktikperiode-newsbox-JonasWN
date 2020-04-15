@@ -23,7 +23,7 @@ const Settings: React.FC<Props> = ({ list, checked, swapOrder }) => {
                 <ul className="bg-primary rounded-lg shadow-lg w-full relative" style={{ height: '240px' }}>
                     <Checked list={list} checked={checked} swapOrder={swapOrder} />
                 </ul>
-                {/* <Toggle /> */}
+                <Toggle />
             </main>
         </React.Fragment>
     )
