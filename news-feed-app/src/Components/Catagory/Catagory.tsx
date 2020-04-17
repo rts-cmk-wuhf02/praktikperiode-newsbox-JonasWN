@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext, useRef, createRef } from 'react'
 import Summary from './Summary'
 import Article from './Article'
 import { SettingsContext } from '../../Context/SettingsContext'
@@ -26,7 +26,7 @@ const Catagory: React.FC<Props> = ({ refresh, setFreshed }) => {
                             <Summary title={item.title} />
                             <Article title={item.title} refresh={refresh} setFreshed={setFreshed} />
                         </details>
-                        : <details className="border-border" >
+                        : <details className="border-border"  >
                             <Summary title={item.title} />
                             <Article title={item.title} refresh={refresh} setFreshed={setFreshed} />
                         </details>}
